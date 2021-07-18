@@ -222,12 +222,12 @@ def find_lane_pixels(binary_warped):
     rightx = nonzerox[right_lane_inds]
     righty = nonzeroy[right_lane_inds]
 
-    return leftx, lefty, rightx, righty
+    return leftx, lefty, rightx, righty,out_img
 
 
 def fit_polynomial(binary_warped):
     # Find our lane pixels first
-    leftx, lefty, rightx, righty= find_lane_pixels(binary_warped)
+    leftx, lefty, rightx, righty,out_img= find_lane_pixels(binary_warped)
 
     ### TO-DO: Fit a second order polynomial to each using `np.polyfit` ###
     left_fit = np.polyfit(lefty, leftx, 2)
@@ -254,7 +254,8 @@ def fit_polynomial(binary_warped):
     # Plots the left and right polynomials on the lane lines
     #plt.plot(left_fitx, ploty, color='yellow')
     #plt.plot(right_fitx, ploty, color='yellow')
-
+    #plt.imshow(out_img)
+    #plt.show()
     return left_fit, right_fit,left_fitx,right_fitx, ploty
 def fit_poly(img_shape, leftx, lefty, rightx, righty):
     ### TO-DO: Fit a second order polynomial to each with np.polyfit() ###
