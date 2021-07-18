@@ -51,9 +51,10 @@ In order to achieve a smooth detection of the lanes, sanity check of the current
 Only in case both conditions are met, the sanity checks return `true` and the found line is used. Otherwise the last valid line is used.
 
 ## Final result
-The detected lane is plotted into the image video using the function `plot_final`which takes `warped_orig,left_fitx,right_fitx,ploty,undist`as input. Finally  estimated curvature and offset to center are overlayed to this final result.
+The detected lane is plotted into the image video using the function `plot_final`which takes `warped_orig,left_fitx,right_fitx,ploty,undist` as input. Finally  estimated curvature and offset to center are overlayed to this final result.
 An example of the final result is shown below:
-![Lanes Image](./Output.jpg)
+![alt text](./Output.JPG)
+
 Here's a [link to my video result](./project_video_out.mp4)
 
 
